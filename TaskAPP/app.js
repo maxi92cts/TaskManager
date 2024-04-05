@@ -2,7 +2,7 @@
 document.getElementById('addTaskForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const taskName = document.getElementById('taskName').value;
-    const taskDate = document.getElementById('taskDate').value;
+    const taskDate = new Date(document.getElementById('taskDate').value).toISOString(); // Convertir fecha a formato ISO
     fetch('http://localhost:8080/tasks/add', {
         method: 'POST',
         headers: {
@@ -39,7 +39,7 @@ function listTasks() {
 function addTaskToList(task) {
     const taskList = document.getElementById('taskList');
     const listItem = document.createElement('li');
-    listItem.textContent = task.name + ' - ' + task.date;
+    listItem.textContent = task.name + ' - ' + new Date(task.date).toLocaleString(); // Convertir fecha a formato local
     const updateBtn = document.createElement('button');
     updateBtn.textContent = 'Actualizar';
     updateBtn.className = 'update-btn';
