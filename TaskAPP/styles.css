@@ -1,27 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambio de la fuente por una más moderna */
+    background-color: #212121; /* Cambio a un tono más oscuro */
+    color: #ffffff;
 }
 
+/* Estilos para el formulario de agregar tarea */
 form {
     margin-bottom: 20px;
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agregar sombra */
 }
 
 input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    background-color: #555555; /* Cambio del color de fondo del input */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px; /* Agregar bordes redondeados */
 }
 
 button {
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #4caf50; /* Cambio a un color verde */
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px; /* Agregar bordes redondeados */
+    transition: background-color 0.3s ease; /* Agregar transición al cambio de color */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #45a049; /* Cambio del color de fondo al pasar el mouse */
 }
 
 ul {
@@ -30,19 +43,44 @@ ul {
 }
 
 li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    border-bottom: 2px solid #444444;
 }
 
 .update-btn, .delete-btn {
-    padding: 5px 10px;
-    background-color: #ffc107;
-    color: white;
+    padding: 8px 15px;
+    background-color: #ff9800; /* Cambio a un color naranja */
+    color: #1a1a1a;
     border: none;
     cursor: pointer;
     margin-left: 5px;
+    border-radius: 5px; /* Agregar bordes redondeados */
 }
 
 .update-btn:hover, .delete-btn:hover {
-    background-color: #ffa000;
+    background-color: #e68a00; /* Cambio del color de fondo al pasar el mouse */
+}
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    /* Estilos específicos para pantallas pequeñas */
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Estilos para el diseño flexible con Flexbox */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Centrar los elementos horizontalmente */
+}
+
+.item {
+    flex: 1 1 200px;
+    margin: 10px;
+    background-color: #444; /* Cambio del color de fondo */
+    padding: 20px;
+    border-radius: 10px; /* Agregar bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agregar sombra */
 }

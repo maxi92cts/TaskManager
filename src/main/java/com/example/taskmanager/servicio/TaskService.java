@@ -40,4 +40,16 @@ public class TaskService {
     public void deleteTask(Long id){
         repo.deleteById(id);
     }
+
+    public Task editTask(Long id, Task task) {
+        Task existingTask = getTaskById(id);
+        if (existingTask != null) {
+            existingTask.setName(task.getName());
+            existingTask.setDate(task.getDate());
+            existingTask.setCompleted(task.isCompleted());
+            return repo.save(existingTask);
+        } else {
+            throw new RuntimeException("La tarea con el ID " + id + " no se encontró.");
+        }
+    }
 }
